@@ -32,6 +32,39 @@ body {
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#595CFF", endColorstr="#C6F8FF", GradientType=1 );
 }
 
+#startButton {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 20px;
+}
+#startButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+}
+
+#startButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: 0;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -200,7 +233,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
   z-index: 1;
 }
 
@@ -211,7 +244,7 @@ h1 {
   left: 0;
   right: 10px;
   bottom: 0;
-  background-color: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
   z-index: 1;
 }
 

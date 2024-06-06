@@ -2,6 +2,23 @@ const keys = document.querySelectorAll(".piano-keys");
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const activeNotes = {}; // Object to keep track of active audio objects
 
+document.getElementById("startButton").addEventListener("click", () => {
+  // Resume the audio context if it's suspended
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  // Request MIDI access
+  if (navigator.requestMIDIAccess) {
+    navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+  } else {
+    console.error("WebMIDI is not supported in this browser.");
+  }
+
+  // Disable the button after starting the audio context
+  document.getElementById("startButton").disabled = true;
+});
+
 keys.forEach((key) => {
   key.addEventListener("click", (e) => {
     const clickedKey = e.target.dataset.list;
@@ -16,12 +33,6 @@ keys.forEach((key) => {
     playSound(clickedKey);
   });
 });
-
-if (navigator.requestMIDIAccess) {
-  navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
-} else {
-  console.error("WebMIDI is not supported in this browser.");
-}
 
 function onMIDISuccess(midiAccess) {
   console.log("MIDI Access Object", midiAccess);
