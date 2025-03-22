@@ -1,38 +1,101 @@
+// // Import Tone.js (you can skip this if you've already included Tone.js via a CDN or npm package)
+// import * as Tone from "tone";
+
+// Initialize the sampler for all the keys (assuming each key has a corresponding sample)
+const sampler = new Tone.Sampler({
+  urls: {
+    C1: "./KeySounds/key01.mp3",
+    "C#1": "./KeySounds/key02.mp3",
+    D1: "./KeySounds/key03.mp3",
+    "D#1": "./KeySounds/key04.mp3",
+    E1: "./KeySounds/key05.mp3",
+    F1: "./KeySounds/key06.mp3",
+    "F#1": "./KeySounds/key07.mp3",
+    G1: "./KeySounds/key08.mp3",
+    "G#1": "./KeySounds/key09.mp3",
+    A1: "./KeySounds/key10.mp3",
+    "A#1": "./KeySounds/key11.mp3",
+    B1: "./KeySounds/key12.mp3",
+    C2: "./KeySounds/key13.mp3",
+    "C#2": "./KeySounds/key14.mp3",
+    D2: "./KeySounds/key15.mp3",
+    "D#2": "./KeySounds/key16.mp3",
+    E2: "./KeySounds/key17.mp3",
+    F2: "./KeySounds/key18.mp3",
+    "F#2": "./KeySounds/key19.mp3",
+    G2: "./KeySounds/key20.mp3",
+    "G#2": "./KeySounds/key21.mp3",
+    A2: "./KeySounds/key22.mp3",
+    "A#2": "./KeySounds/key23.mp3",
+    B2: "./KeySounds/key24.mp3",
+    C3: "./KeySounds/key25.mp3",
+    "C#3": "./KeySounds/key26.mp3",
+    D3: "./KeySounds/key27.mp3",
+    "D#3": "./KeySounds/key28.mp3",
+    E3: "./KeySounds/key29.mp3",
+  },
+  release: 1,
+  baseUrl: "./", // This is the directory where your samples are stored
+}).toDestination(); // Connect the sampler to the output destination (i.e., speakers)
+
 const keys = document.querySelectorAll(".piano-keys");
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-const activeNotes = {}; // Object to keep track of active audio objects
+const activeNotes = {}; // Object to keep track of active notes
 
 document.getElementById("startButton").addEventListener("click", () => {
-  // Resume the audio context if it's suspended
-  if (audioContext.state === "suspended") {
-    audioContext.resume();
-  }
-
-  // Request MIDI access
-  if (navigator.requestMIDIAccess) {
-    navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
-  } else {
-    console.error("WebMIDI is not supported in this browser.");
-  }
+  // Start the audio context and initialize Tone.js
+  Tone.start().then(() => {
+    console.log("Tone.js Audio Context started");
+  });
 
   // Disable the button after starting the audio context
   document.getElementById("startButton").disabled = true;
 });
 
 keys.forEach((key) => {
-  key.addEventListener("click", (e) => {
+  key.addEventListener("mousedown", (e) => {
     const clickedKey = e.target.dataset.list;
-    console.log(`Mouse click on key: ${clickedKey}`);
+    console.log(`Mouse down on key: ${clickedKey}`);
+    const toneNote = mapKeyToTone(clickedKey);
+    if (toneNote) {
+      sampler.triggerAttack(toneNote); // Start the note
+      activeNotes[clickedKey] = toneNote;
 
-    // Resume the audio context if it's suspended
-    if (audioContext.state === "suspended") {
-      audioContext.resume();
+      // Add highlight class to the key
+      e.target.classList.add("highlight");
     }
+  });
 
-    // Create a new Audio object for each key press
-    playSound(clickedKey);
+  key.addEventListener("mouseup", (e) => {
+    const clickedKey = e.target.dataset.list;
+    console.log(`Mouse up on key: ${clickedKey}`);
+    if (activeNotes[clickedKey]) {
+      sampler.triggerRelease(activeNotes[clickedKey]); // Release the note
+      delete activeNotes[clickedKey];
+
+      // Remove highlight class from the key
+      e.target.classList.remove("highlight");
+    }
+  });
+
+  // Handle mouse leaving the key during hold
+  key.addEventListener("mouseleave", (e) => {
+    const clickedKey = e.target.dataset.list;
+    if (activeNotes[clickedKey]) {
+      sampler.triggerRelease(activeNotes[clickedKey]);
+      delete activeNotes[clickedKey];
+
+      // Remove highlight class when mouse leaves
+      e.target.classList.remove("highlight");
+    }
   });
 });
+
+// MIDI handling
+if (navigator.requestMIDIAccess) {
+  navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure);
+} else {
+  console.error("WebMIDI is not supported in this browser.");
+}
 
 function onMIDISuccess(midiAccess) {
   console.log("MIDI Access Object", midiAccess);
@@ -50,11 +113,6 @@ function getMIDIMessage(midiMessage) {
   console.log(
     `MIDI message received: command=${command}, note=${note}, velocity=${velocity}`
   );
-
-  // Resume the audio context if it's suspended
-  if (audioContext.state === "suspended") {
-    audioContext.resume();
-  }
 
   switch (command) {
     case 144: // Note on
@@ -104,47 +162,27 @@ const keyMapping = {
   76: "29",
 };
 
-function playSound(keyId) {
-  const audioUrl = `./KeySounds/key${keyId}.mp3`;
-  fetch(audioUrl)
-    .then((response) => response.arrayBuffer())
-    .then((arrayBuffer) => audioContext.decodeAudioData(arrayBuffer))
-    .then((audioBuffer) => {
-      const source = audioContext.createBufferSource();
-      source.buffer = audioBuffer;
-
-      const gainNode = audioContext.createGain();
-      source.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-
-      gainNode.gain.setValueAtTime(1, audioContext.currentTime); // Initial volume
-
-      source.start();
-      return { source, gainNode };
-    })
-    .then(({ source, gainNode }) => {
-      // Store the audio source and gain node in the activeNotes object
-      activeNotes[keyId] = { source, gainNode };
-    })
-    .catch((e) => console.error(e));
-}
-
 function noteOn(note, velocity) {
   console.log(`Note on: ${note} (velocity: ${velocity})`);
   const keyId = keyMapping[note];
   if (keyId) {
-    const key = document.querySelector(`[data-list="${keyId}"]`);
-    if (key) {
-      key.classList.add("highlight");
-      console.log(`Key highlighted: ${keyId}`);
+    const toneNote = mapKeyToTone(keyId);
+    if (toneNote) {
+      // Store the note to track it
+      activeNotes[note] = toneNote;
 
-      // Play the sound using the Web Audio API
-      playSound(keyId);
-    } else {
-      console.error(`No key found for keyId: ${keyId}`);
+      // Use triggerAttack instead of triggerAttackRelease
+      // This starts the note without scheduling its end
+      sampler.triggerAttack(toneNote, Tone.now(), velocity / 127);
+
+      // Highlight the key visually
+      const keyElement = document.querySelector(
+        `.piano-keys[data-list="${keyId}"]`
+      );
+      if (keyElement) {
+        keyElement.classList.add("highlight");
+      }
     }
-  } else {
-    console.error(`No mapping found for note: ${note}`);
   }
 }
 
@@ -152,45 +190,77 @@ function noteOff(note) {
   console.log(`Note off: ${note}`);
   const keyId = keyMapping[note];
   if (keyId) {
-    const key = document.querySelector(`[data-list="${keyId}"]`);
-    if (key) {
-      key.classList.remove("highlight");
-      console.log(`Key highlight removed: ${keyId}`);
+    // Get the tone note that was previously triggered
+    const toneNote = activeNotes[note];
+    if (toneNote) {
+      // Release the note
+      sampler.triggerRelease(toneNote);
+      // Remove from active notes
+      delete activeNotes[note];
 
-      // Stop the audio associated with this note
-      if (activeNotes[keyId]) {
-        const { source, gainNode } = activeNotes[keyId];
-        const currentTime = audioContext.currentTime;
-        const releaseTime = 0.75; // Adjust this value for a longer release time
-        gainNode.gain.setValueAtTime(gainNode.gain.value, currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(
-          0.001,
-          currentTime + releaseTime
-        ); // Gradual release to avoid clicking
-        source.stop(currentTime + releaseTime); // Stop the sound after the release time
-        delete activeNotes[keyId];
+      // Remove visual highlight
+      const keyElement = document.querySelector(
+        `.piano-keys[data-list="${keyId}"]`
+      );
+      if (keyElement) {
+        keyElement.classList.remove("highlight");
       }
-    } else {
-      console.error(`No key found for keyId: ${keyId}`);
     }
-  } else {
-    console.error(`No mapping found for note: ${note}`);
   }
 }
 
-// Function to stop all active sounds
+function mapKeyToTone(keyId) {
+  const toneMapping = {
+    "01": "C1",
+    "02": "C#1",
+    "03": "D1",
+    "04": "D#1",
+    "05": "E1",
+    "06": "F1",
+    "07": "F#1",
+    "08": "G1",
+    "09": "G#1",
+    10: "A1",
+    11: "A#1",
+    12: "B1",
+    13: "C2",
+    14: "C#2",
+    15: "D2",
+    16: "D#2",
+    17: "E2",
+    18: "F2",
+    19: "F#2",
+    20: "G2",
+    21: "G#2",
+    22: "A2",
+    23: "A#2",
+    24: "B2",
+    25: "C3",
+    26: "C#3",
+    27: "D3",
+    28: "D#3",
+    29: "E3",
+  };
+
+  return toneMapping[keyId];
+}
+
+// Stop all sounds and remove all highlights
 function stopAllSounds() {
-  for (const keyId in activeNotes) {
-    if (activeNotes.hasOwnProperty(keyId)) {
-      const { source, gainNode } = activeNotes[keyId];
-      const currentTime = audioContext.currentTime;
-      gainNode.gain.setValueAtTime(gainNode.gain.value, currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.001, currentTime + 0.1); // Quick fade out
-      source.stop(currentTime + 0.1); // Stop the sound after the quick fade out
-      delete activeNotes[keyId];
-    }
-  }
+  sampler.releaseAll();
+
+  // Remove highlights from all keys
+  document.querySelectorAll(".piano-keys").forEach((key) => {
+    key.classList.remove("highlight");
+  });
+
+  // Clear the active notes object
+  Object.keys(activeNotes).forEach((key) => {
+    delete activeNotes[key];
+  });
 }
 
-// Attach the stopAllSounds function to the stop button
 document.getElementById("stopButton").addEventListener("click", stopAllSounds);
+
+// Add a window event listener to release all notes when the page is closed or refreshed
+window.addEventListener("beforeunload", stopAllSounds);

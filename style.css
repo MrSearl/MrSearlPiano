@@ -11,58 +11,19 @@ body {
   font-family: "Poppins", sans-serif;
   background: hsla(239, 100%, 67%, 1);
 
-  background: linear-gradient(
-    90deg,
-    hsla(239, 100%, 67%, 1) 0%,
-    hsla(187, 100%, 89%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    90deg,
-    hsla(239, 100%, 67%, 1) 0%,
-    hsla(187, 100%, 89%, 1) 100%
-  );
-
+  background: #0f2027; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    90deg,
-    hsla(239, 100%, 67%, 1) 0%,
-    hsla(187, 100%, 89%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#595CFF", endColorstr="#C6F8FF", GradientType=1 );
-}
-
-#startButton {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
-    sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  outline: none;
-  outline: 0;
-  padding: 10px 25px;
-  text-align: center;
-  transform: translateY(0);
-  transition: transform 150ms, box-shadow 150ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-bottom: 20px;
-}
-#startButton:hover {
-  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
-}
-
-#startButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: 0;
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
@@ -76,39 +37,76 @@ h1 {
 }
 
 .button-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 100%;
+  /* background-color: red; */
+  align-items: center;
 }
 
 .piano-title {
   margin-bottom: 30px;
 }
-#stopButton {
-  background: #ff4742;
-  border: 1px solid #ff4742;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+
+#startButton {
+  background-color: #13aa52;
+  border: 1px solid #8c8f8d;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
-  display: inline-block;
+
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  line-height: 16px;
-  min-height: 40px;
-  width: 50%;
+  font-weight: 400;
+  outline: none;
   outline: 0;
-  padding: 12px 14px;
+  padding: 10px 10px;
   text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  vertical-align: middle;
-  margin-top: 200px;
-  border: 1px solid rgba(245, 245, 245, 0.521);
+  margin-bottom: 40px;
+  margin-top: 40px;
+  width: 20%;
+}
+#startButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+}
+
+#startButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: 0;
+}
+
+#stopButton {
+  background-color: #aa1313;
+  border: 1px solid #d3dfd8;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 20px;
+  width: 20%;
 }
 
 .button-24:hover,
@@ -142,7 +140,10 @@ h1 {
 
 .intro-container {
   color: #fff;
-  text-align: center;
+  display: flex;
+  text-align: left;
+  align-items: left;
+  width: 100%;
 }
 
 .piano-container {
