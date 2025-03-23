@@ -99,11 +99,21 @@ if (navigator.requestMIDIAccess) {
 
 function onMIDISuccess(midiAccess) {
   console.log("MIDI Access Object", midiAccess);
+  const midiStatus = document.getElementById("midiStatus");
+  let keyboardConnected = false;
+
   for (let input of midiAccess.inputs.values()) {
+    if (input.name) {
+      midiStatus.textContent = `Connected: ${input.name}`;
+      keyboardConnected = true;
+    }
     input.onmidimessage = getMIDIMessage;
   }
-}
 
+  if (!keyboardConnected) {
+    midiStatus.textContent = "No keyboard connected";
+  }
+}
 function onMIDIFailure() {
   console.error("Could not access your MIDI devices.");
 }
@@ -245,22 +255,22 @@ function mapKeyToTone(keyId) {
   return toneMapping[keyId];
 }
 
-// Stop all sounds and remove all highlights
-function stopAllSounds() {
-  sampler.releaseAll();
+// // Stop all sounds and remove all highlights
+// function stopAllSounds() {
+//   sampler.releaseAll();
 
-  // Remove highlights from all keys
-  document.querySelectorAll(".piano-keys").forEach((key) => {
-    key.classList.remove("highlight");
-  });
+//   // Remove highlights from all keys
+//   document.querySelectorAll(".piano-keys").forEach((key) => {
+//     key.classList.remove("highlight");
+//   });
 
-  // Clear the active notes object
-  Object.keys(activeNotes).forEach((key) => {
-    delete activeNotes[key];
-  });
-}
+//   // Clear the active notes object
+//   Object.keys(activeNotes).forEach((key) => {
+//     delete activeNotes[key];
+//   });
+// }
 
-document.getElementById("stopButton").addEventListener("click", stopAllSounds);
+// document.getElementById("stopButton").addEventListener("click", stopAllSounds);
 
 // Add a window event listener to release all notes when the page is closed or refreshed
 window.addEventListener("beforeunload", stopAllSounds);

@@ -36,6 +36,10 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#midiStatus {
+  color: #cccccc;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
@@ -256,7 +260,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
   z-index: 1;
 }
 
