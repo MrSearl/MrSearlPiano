@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Motown Music Webpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <a href="../index.html"><h1>Motown Music</h1></a>
+      </header>
+      <div class="task-heading">
+        <h2>Task 1 - ‘My Girl’ by The Temptations</h2>
+      </div>
+      <section>
+        <div class="content">
+          <div class="text-and-image-container">
+            <div class="image-container">
+              <img src="temptations.jpg" alt="" />
+            </div>
+            <div class="text-container">
+              <p>
+                The Temptations were an American vocal group known for their success with Motown Records during the 1960s and 1970s. Known for their choreography, distinct harmonies, and flashy wardrobe, the group has been said to be as influential to R&B and soul as The Beatles are to pop and rock.The Temptations' impact extends beyond their chart-topping success, encompassing a profound influence on the evolution of soul and R&B. Their meticulously crafted harmonies, often featuring complex vocal arrangements, set a new standard for group singing.
+              </p>
+            </div>
+          </div>
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+            <audio class="audio-element">
+              <source src="t1mygirl.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+            <input type="range" class="seek-bar" value="0" step="1" />
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+          </div>
+        </div>
+<div class="wb" data-fullscreen-container>
+  <p><strong>Mini Whiteboard Questions:</strong></p>
+
+  <p>What is the first instrument you hear playing?</p>
+
+  <p>What other instruments can you hear playing this piece?</p>
+
+  <p>What is this song about?</p>
+
+  <button class="toggle-button" onclick="toggleFullScreen(this)">🔲</button>
+</div>
+      </section>
+      <section>
+        <div class="keyboard" data-fullscreen-container>
+          <div class="notation-container">
+            <div class="notation-heading"><p>My Girl Melody</p></div>
+            <img src="mygirlmelody.png" alt="" />
+          </div>
+		  <div class = "fullscreenbutton-container">
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+		          </div>
+
+        </div>
+
+        <div class="keyboard" data-fullscreen-container>
+          <div class="container">
+            <div class="intro-container">
+              <!-- <h1>How to build a Piano using Html, CSS and JavaScript</h1>
+            <h3>This is a 24 Key Piano, Click any piano key to play the sound.</h3> -->
+            </div>
+            <!-- <div class="piano-title"><h1>Mr Searl's Piano</h1></div> -->
+            <div class="piano-wrapper">
+              <div class="piano-container">
+                <ul class="piano-keys-list">
+                  <li class="piano-keys white-key left-key" data-list="01">
+                    <span>C</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="02">
+                    <span>C#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="03">
+                    <span>D</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="04">
+                    <span>D#</span>
+                  </li>
+                  <li class="piano-keys single-white" data-list="05">
+                    <span>E</span>
+                  </li>
+                  <li class="piano-keys white-key second-white" data-list="06">
+                    <span>F</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="07">
+                    <span>F#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="08">
+                    <span>G</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="09">
+                    <span>G#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="10">
+                    <span>A</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="11">
+                    <span>A#</span>
+                  </li>
+                  <li class="piano-keys single-white" data-list="12">
+                    <span>B</span>
+                  </li>
+                  <li class="piano-keys white-key second-white" data-list="13">
+                    <span>C</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="14">
+                    <span>C#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="15">
+                    <span>D</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="16">
+                    <span>D#</span>
+                  </li>
+                  <li class="piano-keys single-white" data-list="17">
+                    <span>E</span>
+                  </li>
+                  <li class="piano-keys white-key second-white" data-list="18">
+                    <span>F</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="19">
+                    <span>F#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="20">
+                    <span>G</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="21">
+                    <span>G#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="22">
+                    <span>A</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="23">
+                    <span>A#</span>
+                  </li>
+                  <li class="piano-keys single-white" data-list="24">
+                    <span>B</span>
+                  </li>
+                  <li class="piano-keys white-key second-white" data-list="25">
+                    <span>C</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="26">
+                    <span>C#</span>
+                  </li>
+                  <li class="piano-keys white-key" data-list="27">
+                    <span>D</span>
+                  </li>
+                  <li class="piano-keys black-key" data-list="28">
+                    <span>D#</span>
+                  </li>
+                  <li class="piano-keys right-key" data-list="29">
+                    <span>E</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <button id="startButton">Start</button>
+              <button id="stopButton">Stop</button>
+            </div>
+            <p id="midiStatus">No keyboard connected</p>
+          </div>
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div class="content" data-fullscreen-container>
+          <div class="notation-container">
+            <div class="notation-heading"><p>My Girl Chords</p></div>
+            <img src="chords.png" alt="" />
+          </div>
+         <div class = "fullscreenbutton-container">
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+		          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="video-content">
+          <div class="model-heading"><p>My Girl Melody</p></div>
+
+          <div class="movie-container">
+            <video muted loop playsinline controls>
+              <source src="mygirlmelodymodel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="video-content">
+          <div class="model-heading"><p>My Girl Chords</p></div>
+
+          <div class="movie-container">
+            <video muted loop playsinline controls>
+              <source src="mygirlchordsmodel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- <div class="fixed-button-container">
+      <button class="arrow-button" onclick="scrollToPrev()">←</button>
+      <button class="arrow-button" onclick="scrollToNext()">→</button>
+    </div> -->
+    <script src="../script.js"></script>
+  </body>
+</html>

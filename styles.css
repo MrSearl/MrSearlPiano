@@ -1,0 +1,684 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #242583;
+  color: #fff;
+  text-align: center;
+  padding: 20px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.main-container-do-now{
+	font-size:5rem;
+  font-family: "Roboto", sans-serif;
+  text-align:center;
+  width:100%;
+  display:block;
+  padding-top:50px;
+	
+}
+	
+	
+
+
+
+.main-container {
+  height: fit-content;
+}
+header h1 {
+  font-size: 3em;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* p {
+  font-size: 1.2em;
+}
+ */
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+section {
+  display: flex;
+  align-items: left;
+  padding: 20px 20px 0 20px;
+  /* min-height: 100vh; */
+  width: 95%;
+  background-color: #f4f4f4;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h2 {
+  color: #0a0a0a;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 1.6;
+  width: 45%;
+  padding: 0 20px 20px 20px;
+
+}
+
+.video-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  width: 45%;
+  padding: 0 20px 20px 20px;
+
+}
+
+
+.model {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 1.6;
+  width: 45%;
+}
+
+.listening-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.wb {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  list-style-type: none;
+  font-size:1.2rem;
+
+}
+/* .wb ul {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 1.6;
+} */
+
+/* .content li {
+  margin: 10px 0;
+  font-size: 1.2em;
+  padding-left: 10px;
+} */
+
+
+
+.fixed-button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 85%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.arrow-button {
+  background-color: #242583;
+  color: #fff;
+  font-size: 2.2em;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.arrow-button:hover {
+  background-color: #555;
+}
+
+audio {
+  margin: 20px 0;
+  width: 50%;
+  transform: scale(1.5); /* Makes it 1.5x larger */
+  transform-origin: top left; /* Optional: controls where it scales from */
+}
+
+.image-container {
+  width: 20%;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+img {
+  width: 100%;
+  padding:0;
+  border:0;
+  margin:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.play-pause-btn {
+  border: 0;
+}
+
+.task-heading {
+  text-align: left;
+  width: 100vh;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.custom-audio-player {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+  padding-left: 20px;
+}
+
+.custom-audio-player button.play-pause-btn {
+  font-size: 4rem;
+  font-family: "Roboto", sans-serif;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  padding: 0 0 30px 0;
+}
+
+.custom-audio-player button.play-pause-btn:hover {
+  color: #007bff;
+}
+
+.custom-audio-player input[type="range"] {
+  width: 100%;
+  height: 2.25rem;
+  cursor: pointer;
+}
+
+.text-and-image-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.text-container {
+  width: 80%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-size:1.2em;
+	
+  margin: 0;
+  border: 0;
+}
+.text-container p {
+
+	
+  margin: 0;
+  border: 0;
+}
+
+
+.notation-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0 20px 0 20px;
+}
+
+.notation-heading p{
+  font-size:1.2em;
+}
+
+.notation-heading {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+.model-heading {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-size:1.2em;
+
+}
+.keyboard {
+  width: 45%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 20px 20px 20px;
+}
+
+.piano-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#midiStatus {
+  color: #333333;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+  /* background-color: red; */
+  justify-content: space-between;
+  align-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.keyboard.fullscreen-active .button-container {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.keyboard.fullscreen-active #midiStatus {
+  display: none;
+}
+
+.piano-title {
+  margin-bottom: 30px;
+}
+
+#startButton {
+  background-color: #13aa52;
+}
+
+#stopButton {
+  background-color: #aa1313;
+}
+
+#startButton,
+#stopButton {
+  border: 1px solid #8c8f8d;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  padding: 5px 5px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 10%;
+}
+#startButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+}
+
+#startButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: 0;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+.button-24:active {
+  opacity: 0.5;
+}
+
+.white-key span,
+.single-white span,
+.second-white span,
+.right-key span,
+.black-key span {
+  position: relative;
+  z-index: 2; /* Ensure the text is above the highlight overlay */
+  font-size: 1.5rem;
+}
+.container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+  margin-top: 60px;
+}
+
+.intro-container {
+  color: #fff;
+  display: flex;
+  text-align: left;
+  align-items: left;
+  width: 100%;
+}
+
+.piano-container {
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  transform: scale(0.7, 0.7);
+  transform-origin: left top;
+  transition: transform 0.3s ease;
+}
+
+.piano-container.fullscreen-scale {
+  transform: scale(1, 1);
+}
+
+.piano-wrapper.fullscreen-scale {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 40px;
+}
+
+.piano-keys-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.piano-keys {
+  cursor: pointer;
+  position: relative;
+  /* width: clamp(2.5rem, 5vw, 6rem);
+  height: clamp(10rem, 25vh, 20rem); */
+  border-radius: 0px;
+  border: 1px solid #000;
+}
+
+*/ .left-key {
+  border-radius: 5px;
+  width: 5rem;
+}
+
+.left-key,
+.right-key,
+.white-key,
+.single-white,
+.second-white {
+  font-family: "Poppins";
+  font-size: 2rem;
+  text-align: center;
+  align-content: end;
+  padding-bottom: 10px;
+  color: #333333;
+  height: 18rem;
+}
+
+.black-key {
+  font-family: "Poppins";
+  font-size: 1.5rem;
+  color: #cccccc;
+  vertical-align: bottom;
+  align-content: end;
+  padding-bottom: 10px;
+  text-align: center;
+  width: clamp(1rem, 2.5vw, 3rem);
+  height: clamp(7rem, 15vh, 13rem);
+  margin: 0 clamp(-1rem, -2vw, -30px);
+}
+
+.right-key {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 5rem;
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+}
+
+.white-key {
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  width: 6rem;
+  height: 18rem;
+}
+
+.single-white {
+  border-right: 0;
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  width: 5rem;
+  height: 18rem;
+}
+
+.second-white {
+  width: 5.5rem;
+}
+
+.black-key {
+  width: 3rem;
+  height: 13rem;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: linear-gradient(to bottom, #000000, #333333);
+  z-index: 2;
+  margin: 0 -30px 0 -30px;
+}
+
+.single-white.highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
+  z-index: 1;
+}
+
+.white-key.highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 10px;
+  bottom: 0;
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
+  z-index: 1;
+}
+
+.right-key.highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
+  z-index: 1;
+}
+
+.black-key.highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 0, 0.7); /* Semi-transparent yellow */
+  z-index: 1;
+}
+
+.black-key.highlight span {
+  color: #000;
+}
+.movie-container {
+  display: flex;
+  flex-direction: row;
+}
+
+video {
+  width: 100%;
+
+}
+
+/* CSS */
+
+
+.toggle-button:disabled {
+  cursor: default;
+}
+
+.toggle-button:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+/* [data-fullscreen-container] img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1em; /* Gives some breathing room */
+  box-sizing: border-box;
+}
+ */
+
+
+/* Base font size when fullscreen is active
+ */[data-fullscreen-container].fullscreen-active {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  transition: font-size 0.3s ease;
+}
+
+/* Fullscreen image sizing */
+[data-fullscreen-container].fullscreen-active img {
+  max-width: 75vw;
+  max-height: 75vh;
+  padding:0;
+  margin:0;
+  display:flex;
+  align-content:center
+   display: block;
+  margin: 0 auto;
+}
+
+/* Base font size when fullscreen is active */
+[data-fullscreen-container].fullscreen-active {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  transition: font-size 0.3s ease;
+}
+
+/* Paragraph text in fullscreen */
+[data-fullscreen-container].fullscreen-active p {
+  font-size: 2.4rem !important;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  transition: font-size 0.3s ease;
+}
+
+/* Optional: strong text emphasis stays strong */
+[data-fullscreen-container].fullscreen-active strong {
+  font-weight: 700;
+}
+
+/* Specific rule for the whiteboard */
+.wb.fullscreen-active {
+  font-size: 5.4rem;
+  line-height: 1.5;
+  transition: font-size 0.3s ease;
+}
+
+.toggle-button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  border: 1px solid grey;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #ccc;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Ubuntu, sans-serif;
+  height: 30px;
+  width: fit-content;
+  line-height: 1.15;
+  margin: 0.5em 
+  outline: none;
+  overflow: hidden;
+  padding: 0 15px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+   font-size: 0.5rem; /* or any size you prefer */
+
+  
+}
+
+.fullscreenbutton-container{
+	
+	width:100%;
+	background-color;red;
+	padding-left:20px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
