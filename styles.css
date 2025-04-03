@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color:#615f5f;
+  background-color: #615f5f;
   color: #fff;
   text-align: center;
   padding: 20px 40px;
@@ -17,19 +17,14 @@ header {
   width: 100%;
 }
 
-.main-container-do-now{
-	font-size:5rem;
+.main-container-do-now {
+  font-size: 5rem;
   font-family: "Roboto", sans-serif;
-  text-align:center;
-  width:100%;
-  display:block;
-  padding-top:50px;
-	
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-top: 50px;
 }
-	
-	
-
-
 
 .main-container {
   height: fit-content;
@@ -80,7 +75,6 @@ h2 {
   line-height: 1.6;
   width: 45%;
   padding: 0 20px 20px 20px;
-
 }
 
 .video-content {
@@ -91,9 +85,7 @@ h2 {
   line-height: 1.6;
   width: 45%;
   padding: 0 20px 20px 20px;
-
 }
-
 
 .model {
   background-color: #fff;
@@ -123,8 +115,7 @@ h2 {
   flex-direction: column;
   width: 45%;
   list-style-type: none;
-  font-size:1.2rem;
-
+  font-size: 1.2rem;
 }
 /* .wb ul {
   list-style-type: none;
@@ -137,8 +128,6 @@ h2 {
   font-size: 1.2em;
   padding-left: 10px;
 } */
-
-
 
 .fixed-button-container {
   position: fixed;
@@ -179,9 +168,9 @@ audio {
 
 img {
   width: 100%;
-  padding:0;
-  border:0;
-  margin:0;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 h1,
@@ -189,15 +178,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
- {
+h6 {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
 .play-pause-btn {
-  
   border: none;
   outline: none;
 }
@@ -249,18 +236,15 @@ h6,
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
-  font-size:1.2em;
-	
+  font-size: 1.2em;
+
   margin: 0;
   border: 0;
 }
 .text-container p {
-
-	
   margin: 0;
   border: 0;
 }
-
 
 .notation-container {
   background-color: #fff;
@@ -268,8 +252,8 @@ h6,
   padding: 0 20px 0 20px;
 }
 
-.notation-heading p{
-  font-size:1.2em;
+.notation-heading p {
+  font-size: 1.2em;
 }
 
 .notation-heading {
@@ -283,8 +267,7 @@ h6,
   text-align: center;
   background-color: white;
   color: black;
-  font-size:1.2em;
-
+  font-size: 1.2em;
 }
 .keyboard {
   width: 45%;
@@ -572,11 +555,9 @@ h6,
 
 video {
   width: 100%;
-
 }
 
 /* CSS */
-
 
 .toggle-button:disabled {
   cursor: default;
@@ -587,19 +568,10 @@ video {
     rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
-/* [data-fullscreen-container] img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding: 1em; /* Gives some breathing room */
-  box-sizing: border-box;
-}
- */
-
 
 /* Base font size when fullscreen is active
- */[data-fullscreen-container].fullscreen-active {
+ */
+[data-fullscreen-container].fullscreen-active {
   font-size: 2.5rem;
   line-height: 1.6;
   transition: font-size 0.3s ease;
@@ -609,11 +581,11 @@ video {
 [data-fullscreen-container].fullscreen-active img {
   max-width: 75vw;
   max-height: 75vh;
-  padding:0;
-  margin:0;
-  display:flex;
-  align-content:center
-   display: block;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-content: center;
+  display: block;
   margin: 0 auto;
 }
 
@@ -655,12 +627,12 @@ video {
   box-sizing: border-box;
   color: #ccc;
   cursor: pointer;
-  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
-    Ubuntu, sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", "Roboto", "Helvetica Neue",
+    "Ubuntu", sans-serif;
   height: 30px;
   width: fit-content;
   line-height: 1.15;
-  margin: 0.5em 
+  margin: 0.5em;
   outline: none;
   overflow: hidden;
   padding: 0 15px;
@@ -671,16 +643,12 @@ video {
   transition: all 0.2s, box-shadow 0.08s ease-in;
   user-select: none;
   -webkit-user-select: none;
-   font-size: 0.5rem; /* or any size you prefer */
-
-  
+  font-size: 0.5rem; /* or any size you prefer */
 }
 
-.fullscreenbutton-container{
-	
-	width:100%;
-	background-color;red;
-	padding-left:20px;
-	padding-top:10px;
-	padding-bottom:10px;
+.fullscreenbutton-container {
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
