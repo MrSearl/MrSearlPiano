@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: #242583;
+  background-color:#615f5f;
   color: #fff;
   text-align: center;
   padding: 20px 40px;
@@ -38,7 +38,7 @@ header h1 {
   font-size: 3em;
   font-family: "Roboto", sans-serif;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /* p {
@@ -197,7 +197,9 @@ h6,
 }
 
 .play-pause-btn {
-  border: 0;
+  
+  border: none;
+  outline: none;
 }
 
 .task-heading {

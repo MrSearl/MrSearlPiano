@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Reggae Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <a href="../index.html"><h1>Reggae Music</h1></a>
+      </header>
+      <div class="task-heading">
+        <h2>Task 1 - ‘Three Little Birds’ by Bob Marley</h2>
+      </div>
+      <section>
+        <div class="content">
+          <div class="text-and-image-container">
+            <div class="image-container">
+              <img src="bobmarley.png" alt="" />
+            </div>
+            <div class="text-container">
+              <p>
+                Robert Nesta Marley was born on 6 February 1947 to Cedella
+                Malcolm and Norval Marley. His father was a General in the
+                British Army but he abandoned Bob and Cedella shortly after
+                their marriage. Cedella and Bob moved to Kingston five years
+                later in search of a better life. Bob and his best friend Bunny
+                Livingston escaped the violent world of Kingston by burying
+                themselves in music, writing their own songs and practising
+                them. In 1963, Bob recorded his first single and gradually the
+                Wailers (Bob’s band) became one of the most popular groups in
+                Jamaica. His music and message continues to inspire people
+                around the world.
+              </p>
+            </div>
+          </div>
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+            <audio class="audio-element">
+              <source src="t1threelittlebirds.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+            <input type="range" class="seek-bar" value="0" step="1" />
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+          </div>
+        </div>
+        <div class="wb" data-fullscreen-container>
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>What instruments can you hear being played?</p>
+
+          <p>What do you think this song is about?</p>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+        </div>
+      </section>
+
+      <
+
+      <!--       <section>
+        <div class="content" data-fullscreen-container>
+          <div class="notation-container">
+            <div class="notation-heading"><p>My Girl Chords</p></div>
+            <img src="chords.png" alt="" />
+          </div>
+         <div class = "fullscreenbutton-container">
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+		          </div>
+        </div>
+      </section> -->
+
+      <section>
+        <div class="video-content">
+          <div class="model-heading"><p>Reggae Lesson 1</p></div>
+
+          <div class="movie-container">
+            <video playsinline controls>
+              <source src="reggaelesson1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- <div class="video-content">
+          <div class="model-heading"><p>My Girl Chords</p></div>
+
+          <div class="movie-container">
+            <video muted loop playsinline controls>
+              <source src="mygirlchordsmodel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <!-- <div class="fixed-button-container">
+      <button class="arrow-button" onclick="scrollToPrev()">←</button>
+      <button class="arrow-button" onclick="scrollToNext()">→</button>
+    </div> -->
+    <script src="../script.js"></script>
+  </body>
+</html>
