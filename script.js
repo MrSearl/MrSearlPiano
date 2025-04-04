@@ -1,8 +1,5 @@
 let currentlyFullscreen = null;
 
-
-
-
 document.querySelectorAll(".custom-audio-player").forEach((player) => {
   const audio = player.querySelector(".audio-element");
   const playPauseBtn = player.querySelector(".play-pause-btn");
@@ -80,35 +77,35 @@ function scrollToPrev() {
 // Initialize the sampler for all the keys (assuming each key has a corresponding sample)
 const sampler = new Tone.Sampler({
   urls: {
-    C1: "./KeySounds/key01.mp3",
-    "C#1": "./KeySounds/key02.mp3",
-    D1: "./KeySounds/key03.mp3",
-    "D#1": "./KeySounds/key04.mp3",
-    E1: "./KeySounds/key05.mp3",
-    F1: "./KeySounds/key06.mp3",
-    "F#1": "./KeySounds/key07.mp3",
-    G1: "./KeySounds/key08.mp3",
-    "G#1": "./KeySounds/key09.mp3",
-    A1: "./KeySounds/key10.mp3",
-    "A#1": "./KeySounds/key11.mp3",
-    B1: "./KeySounds/key12.mp3",
-    C2: "./KeySounds/key13.mp3",
-    "C#2": "./KeySounds/key14.mp3",
-    D2: "./KeySounds/key15.mp3",
-    "D#2": "./KeySounds/key16.mp3",
-    E2: "./KeySounds/key17.mp3",
-    F2: "./KeySounds/key18.mp3",
-    "F#2": "./KeySounds/key19.mp3",
-    G2: "./KeySounds/key20.mp3",
-    "G#2": "./KeySounds/key21.mp3",
-    A2: "./KeySounds/key22.mp3",
-    "A#2": "./KeySounds/key23.mp3",
-    B2: "./KeySounds/key24.mp3",
-    C3: "./KeySounds/key25.mp3",
-    "C#3": "./KeySounds/key26.mp3",
-    D3: "./KeySounds/key27.mp3",
-    "D#3": "./KeySounds/key28.mp3",
-    E3: "./KeySounds/key29.mp3",
+    C1: "../KeySounds/key01.mp3",
+    "C#1": "../KeySounds/key02.mp3",
+    D1: "../KeySounds/key03.mp3",
+    "D#1": "../KeySounds/key04.mp3",
+    E1: "../KeySounds/key05.mp3",
+    F1: "../KeySounds/key06.mp3",
+    "F#1": "../KeySounds/key07.mp3",
+    G1: "../KeySounds/key08.mp3",
+    "G#1": "../KeySounds/key09.mp3",
+    A1: "../KeySounds/key10.mp3",
+    "A#1": "../KeySounds/key11.mp3",
+    B1: "../KeySounds/key12.mp3",
+    C2: "../KeySounds/key13.mp3",
+    "C#2": "../KeySounds/key14.mp3",
+    D2: "../KeySounds/key15.mp3",
+    "D#2": "../KeySounds/key16.mp3",
+    E2: "../KeySounds/key17.mp3",
+    F2: "../KeySounds/key18.mp3",
+    "F#2": "../KeySounds/key19.mp3",
+    G2: "../KeySounds/key20.mp3",
+    "G#2": "../KeySounds/key21.mp3",
+    A2: "../KeySounds/key22.mp3",
+    "A#2": "../KeySounds/key23.mp3",
+    B2: "../KeySounds/key24.mp3",
+    C3: "../KeySounds/key25.mp3",
+    "C#3": "../KeySounds/key26.mp3",
+    D3: "../KeySounds/key27.mp3",
+    "D#3": "../KeySounds/key28.mp3",
+    E3: "../KeySounds/key29.mp3",
   },
   release: 1,
   baseUrl: "./", // This is the directory where your samples are stored
@@ -352,7 +349,6 @@ document.getElementById("stopButton").addEventListener("click", stopAllSounds);
 // Add a window event listener to release all notes when the page is closed or refreshed
 window.addEventListener("beforeunload", stopAllSounds);
 
-
 function toggleFullScreen(button) {
   const container = button.closest("[data-fullscreen-container]");
   const isKeyboard = container.classList.contains("keyboard");
@@ -367,59 +363,65 @@ function toggleFullScreen(button) {
 
   if (enteringFullscreen) {
     console.log("⛶ Attempting to enter fullscreen...");
-    container.requestFullscreen().then(() => {
-      console.log("✅ Entered fullscreen");
-      container.classList.add("fullscreen-active");
-      currentlyFullscreen = container;
+    container
+      .requestFullscreen()
+      .then(() => {
+        console.log("✅ Entered fullscreen");
+        container.classList.add("fullscreen-active");
+        currentlyFullscreen = container;
 
-      if (isKeyboard && piano) {
-        piano.classList.add("fullscreen-scale");
-        console.log("🎹 Piano scaled up");
-      }
+        if (isKeyboard && piano) {
+          piano.classList.add("fullscreen-scale");
+          console.log("🎹 Piano scaled up");
+        }
 
-      if (notationHeading) {
-        notationHeading.classList.add("fullscreen-notation");
-        console.log("🎼 Notation scaled up");
-      }
-    }).catch(err => {
-      console.error("❌ Error entering fullscreen:", err);
-    });
+        if (notationHeading) {
+          notationHeading.classList.add("fullscreen-notation");
+          console.log("🎼 Notation scaled up");
+        }
+      })
+      .catch((err) => {
+        console.error("❌ Error entering fullscreen:", err);
+      });
   } else {
     console.log("↩️ Exiting fullscreen...");
-    document.exitFullscreen().then(() => {
-      console.log("✅ Successfully exited fullscreen");
+    document
+      .exitFullscreen()
+      .then(() => {
+        console.log("✅ Successfully exited fullscreen");
 
-      if (isWhiteboard) {
-        container.className = "wb";
-        console.log("✅ Reset class to 'wb'");
-      } else {
-        container.classList.remove("fullscreen-active");
-        console.log("✅ Removed 'fullscreen-active' from non-wb");
-      }
+        if (isWhiteboard) {
+          container.className = "wb";
+          console.log("✅ Reset class to 'wb'");
+        } else {
+          container.classList.remove("fullscreen-active");
+          console.log("✅ Removed 'fullscreen-active' from non-wb");
+        }
 
-      if (isKeyboard && piano) {
-        piano.classList.remove("fullscreen-scale");
-        console.log("🎹 Removed piano scale");
-      }
+        if (isKeyboard && piano) {
+          piano.classList.remove("fullscreen-scale");
+          console.log("🎹 Removed piano scale");
+        }
 
-      if (notationHeading) {
-        notationHeading.classList.remove("fullscreen-notation");
-        console.log("🎼 Removed notation scale");
-      }
+        if (notationHeading) {
+          notationHeading.classList.remove("fullscreen-notation");
+          console.log("🎼 Removed notation scale");
+        }
 
-      currentlyFullscreen = null;
-    }).catch(err => {
-      console.error("❌ Failed to exit fullscreen:", err);
-    });
+        currentlyFullscreen = null;
+      })
+      .catch((err) => {
+        console.error("❌ Failed to exit fullscreen:", err);
+      });
   }
 }
-
 
 document.addEventListener("fullscreenchange", () => {
   console.log("📣 fullscreenchange event fired");
 
   if (!document.fullscreenElement) {
-    const container = currentlyFullscreen || document.querySelector(".fullscreen-active");
+    const container =
+      currentlyFullscreen || document.querySelector(".fullscreen-active");
 
     if (!container) {
       console.log("⚠️ No active fullscreen container found");
@@ -452,4 +454,3 @@ document.addEventListener("fullscreenchange", () => {
     console.log("🧹 Cleared currentlyFullscreen");
   }
 });
-
