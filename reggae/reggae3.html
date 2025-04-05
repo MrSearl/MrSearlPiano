@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Reggae Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <a href="../index.html"><h1>Reggae Music</h1></a>
+      </header>
+      <div class="task-heading">
+        <h2>Task 3 - ‘Get Up Stand Up’ by Bob Marley</h2>
+      </div>
+      <section>
+        <div class="content">
+          <div class="text-and-image-container">
+            <div class="image-container">
+              <img src="getup.jpg" alt="" />
+            </div>
+            <div class="text-container">
+              <p>
+                Marley wrote the song while touring Haiti, deeply moved by its
+                poverty and the lives of Haitians, according to his
+                then-girlfriend Esther Anderson. The song was frequently
+                performed at Marley’s concerts, often as the last song. ”Get Up,
+                Stand Up” was also the last song Marley ever performed on stage,
+                on 23 September 1980 in Pittsburgh, Pennsylvania. The song is
+                known for its simple, direct message and its use in social
+                justice movements.
+              </p>
+            </div>
+          </div>
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+            <audio class="audio-element">
+              <source src="t1threelittlebirds.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+            <input type="range" class="seek-bar" value="0" step="1" />
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+          </div>
+        </div>
+        <div class="wb" data-fullscreen-container>
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            Use the following words to make a list of the structure of this song
+            (you can use them more than once). Please start with ’Intro’.
+          </p>
+
+          <p>
+            What instruments are being played? (Use the list in your booklet)
+          </p>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+        </div>
+      </section>
+
+      <!--       <section>
+        <div class="content" data-fullscreen-container>
+          <div class="notation-container">
+            <div class="notation-heading"><p>My Girl Chords</p></div>
+            <img src="chords.png" alt="" />
+          </div>
+         <div class = "fullscreenbutton-container">
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+		          </div>
+        </div>
+      </section> -->
+
+      <section>
+        <div class="video-content">
+          <div class="model-heading"><p>Reggae Lesson 3</p></div>
+
+          <div class="movie-container">
+            <video playsinline controls>
+              <source src="reggaelesson3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- <div class="video-content">
+          <div class="model-heading"><p>My Girl Chords</p></div>
+
+          <div class="movie-container">
+            <video muted loop playsinline controls>
+              <source src="mygirlchordsmodel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <!-- <div class="fixed-button-container">
+      <button class="arrow-button" onclick="scrollToPrev()">←</button>
+      <button class="arrow-button" onclick="scrollToNext()">→</button>
+    </div> -->
+    <script src="../script.js"></script>
+  </body>
+</html>
