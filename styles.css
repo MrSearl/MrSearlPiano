@@ -686,3 +686,43 @@ video {
   font-size: 32px;
   padding-top: 40px;
 }
+
+/* Fix fullscreen layout for whiteboard containers */
+.wb.fullscreen-active {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: white;
+  display: block;              /* use block layout, not flex */
+  overflow: auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Center the table itself, but not its text */
+.wb.fullscreen-active table {
+  margin: 30px 0 ;           /* centers the table */
+  width: 90%;
+  /* max-width: 1200px; */
+  border-collapse: collapse;
+  font-size: 2.0rem;           /* larger for projection */
+}
+
+.wb.fullscreen-active td {
+  padding: 12px 10px;
+  border: 1px solid #999;
+  text-align: left;            /* make sure text stays left-aligned */
+}
+
+/* Normal (non-fullscreen) layout */
+.wb table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.wb td {
+  border: 1px solid #aaa;
+  padding: 6px;
+  text-align: left;
+}
