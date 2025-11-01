@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <title>Intro To Music Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <a href="../index.html"><h1>Dance Music</h1></a>
+      </header>
+      <div class="task-heading">
+        <h2>Task 4 - ‘Pon De Floor’ by Major Lazer</h2>
+      </div>
+      <section>
+        <div class="content">
+          <div class="text-and-image-container">
+            <div class="image-container">
+              <img src="dancet4.jpg" alt="" />
+            </div>
+            <div class="text-container">
+              <p>
+ "Pon de Floor" is a song by Major Lazer, a collaborative musical project consisting of the American DJ Diplo and the British DJ Switch. The single was released in 2009 by Mad Decent and Downtown Records as the second single from Major Lazer's first studio album, Guns Don't Kill People... Lazers Do (2009). 
+        </div>
+          </div>
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+            <audio class="audio-element">
+              <source src="dancet4.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+            <input type="range" class="seek-bar" value="0" step="1" />
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+          </div>
+        </div>
+        <div class="wb" data-fullscreen-container>
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p> This song uses drum fills. What are drum fills?</p>
+
+          <p>The main ostinato has been manipulated. What has happened to it?</p>
+
+          <p> Vybz Kartel’s vocal has been double-tracked.What do you think double-tracking is?<br></p>
+
+
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+        </div>
+      </section>
+     
+
+      <section>
+        <div class="video-content">
+          <div class="model-heading"><p>Dance Music Melody</p></div>
+
+          <div class="movie-container">
+            <video playsinline controls>
+              <source src="dancelesson4.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- <div class="video-content">
+          <div class="model-heading"><p>Blues Bassline</p></div>
+
+          <div class="movie-container">
+            <video muted loop playsinline controls>
+              <source src="bluesbasslinevid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <!-- <div class="fixed-button-container">
+      <button class="arrow-button" onclick="scrollToPrev()">←</button>
+      <button class="arrow-button" onclick="scrollToNext()">→</button>
+    </div> -->
+    <script src="../script.js"></script>
+  </body>
+</html>
