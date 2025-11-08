@@ -351,70 +351,85 @@ window.addEventListener("beforeunload", stopAllSounds);
 
 function toggleFullScreen(button) {
   const container = button.closest("[data-fullscreen-container]");
+  const iframe = container.querySelector("iframe");
   const isKeyboard = container.classList.contains("keyboard");
   const isWhiteboard = container.classList.contains("wb");
   const piano = container.querySelector(".piano-container");
-  const notationHeading = document.querySelector(".notation-heading");
+  const notationHeading = container.querySelector(".notation-heading");
 
   console.log("🔲 Toggle button clicked");
-  console.log("Current container classes:", container.className);
 
+  // ---------- Handle iframe fullscreen ----------
+  if (iframe) {
+    if (!document.fullscreenElement) {
+      iframe
+        .requestFullscreen()
+        .then(() => {
+          currentlyFullscreen = iframe;
+          button.textContent = "🔲"; // change icon
+          console.log("✅ Entered fullscreen for iframe");
+        })
+        .catch((err) =>
+          console.error("❌ Error entering fullscreen for iframe:", err)
+        );
+    } else {
+      document
+        .exitFullscreen()
+        .then(() => {
+          button.textContent = "🔲"; // reset icon
+          currentlyFullscreen = null;
+          console.log("✅ Exited fullscreen for iframe");
+        })
+        .catch((err) =>
+          console.error("❌ Error exiting fullscreen for iframe:", err)
+        );
+    }
+    return;
+  }
+
+  // ---------- Handle normal fullscreen sections ----------
   const enteringFullscreen = !document.fullscreenElement;
 
   if (enteringFullscreen) {
-    console.log("⛶ Attempting to enter fullscreen...");
     container
       .requestFullscreen()
       .then(() => {
-        console.log("✅ Entered fullscreen");
         container.classList.add("fullscreen-active");
         currentlyFullscreen = container;
+        button.textContent = "🔲"; // change icon
 
-        if (isKeyboard && piano) {
-          piano.classList.add("fullscreen-scale");
-          console.log("🎹 Piano scaled up");
-        }
+        if (isKeyboard && piano) piano.classList.add("fullscreen-scale");
+        if (notationHeading) notationHeading.classList.add("fullscreen-notation");
 
-        if (notationHeading) {
-          notationHeading.classList.add("fullscreen-notation");
-          console.log("🎼 Notation scaled up");
-        }
+        console.log("✅ Entered fullscreen");
       })
-      .catch((err) => {
-        console.error("❌ Error entering fullscreen:", err);
-      });
+      .catch((err) => console.error("❌ Error entering fullscreen:", err));
   } else {
-    console.log("↩️ Exiting fullscreen...");
     document
       .exitFullscreen()
       .then(() => {
-        console.log("✅ Successfully exited fullscreen");
+        button.textContent = "🔲"; // reset icon
+        container.classList.remove("fullscreen-active");
 
-        if (isWhiteboard) {
-          container.className = "wb";
-          console.log("✅ Reset class to 'wb'");
-        } else {
-          container.classList.remove("fullscreen-active");
-          console.log("✅ Removed 'fullscreen-active' from non-wb");
-        }
-
-        if (isKeyboard && piano) {
-          piano.classList.remove("fullscreen-scale");
-          console.log("🎹 Removed piano scale");
-        }
-
-        if (notationHeading) {
-          notationHeading.classList.remove("fullscreen-notation");
-          console.log("🎼 Removed notation scale");
-        }
+        if (isKeyboard && piano) piano.classList.remove("fullscreen-scale");
+        if (notationHeading) notationHeading.classList.remove("fullscreen-notation");
 
         currentlyFullscreen = null;
+        console.log("✅ Exited fullscreen");
       })
-      .catch((err) => {
-        console.error("❌ Failed to exit fullscreen:", err);
-      });
+      .catch((err) => console.error("❌ Error exiting fullscreen:", err));
   }
 }
+
+// ---------- Keep icon in sync if user exits via Esc ----------
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement && currentlyFullscreen) {
+    const button = currentlyFullscreen.querySelector(".toggle-button");
+    if (button) button.textContent = "🔲"; // reset icon when Esc pressed
+    currentlyFullscreen = null;
+  }
+});
+
 
 document.addEventListener("fullscreenchange", () => {
   console.log("📣 fullscreenchange event fired");
