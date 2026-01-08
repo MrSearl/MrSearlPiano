@@ -81,14 +81,35 @@
             </button>
           </div>
         </div>
+              <div class="content" data-fullscreen-container>
+          <div class="notation-container">
+            <div class="notation-heading"><p></p></div>
 
-        <div class="keyboard" data-fullscreen-container>
+            <div class="iframe-wrapper">
+        <iframe
+        id="midiFrame"
+        src="https://mrsearl.github.io/midi-playalong/"
+        allow="autoplay; midi; fullscreen"
+        allowfullscreen
+        style="width:100%;max-width:900px;height:600px;border:none;border-radius:10px;"
+      ></iframe>
+            </div>
+
+            <div class="fullscreenbutton-container">
+            <button class="toggle-button" onclick="toggleFullScreen(this)">🔲</button>
+          </div>
+
+          </div>
+
+        
+        </div>
+
+        <!-- <div class="keyboard" data-fullscreen-container>
           <div class="container">
             <div class="intro-container">
-              <!-- <h1>How to build a Piano using Html, CSS and JavaScript</h1>
-            <h3>This is a 24 Key Piano, Click any piano key to play the sound.</h3> -->
+         
             </div>
-            <!-- <div class="piano-title"><h1>Mr Searl's Piano</h1></div> -->
+          
             <div class="piano-wrapper">
               <div class="piano-container">
                 <ul class="piano-keys-list">
@@ -192,7 +213,7 @@
           <button class="toggle-button" onclick="toggleFullScreen(this)">
             🔲
           </button>
-        </div>
+        </div> -->
       </section>
 
       <section>
@@ -209,28 +230,7 @@
           </div>
         </div>
 
-        <div class="content" data-fullscreen-container>
-          <div class="notation-container">
-            <div class="notation-heading"><p></p></div>
-
-            <div class="iframe-wrapper">
-        <iframe
-        id="midiFrame"
-        src="https://mrsearl.github.io/midi-playalong/"
-        allow="autoplay; midi; fullscreen"
-        allowfullscreen
-        style="width:100%;max-width:900px;height:600px;border:none;border-radius:10px;"
-      ></iframe>
-            </div>
-
-            <div class="fullscreenbutton-container">
-            <button class="toggle-button" onclick="toggleFullScreen(this)">🔲</button>
-          </div>
-
-          </div>
-
-        
-        </div>
+  
       </section>
 
       <section>
