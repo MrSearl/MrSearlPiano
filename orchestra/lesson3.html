@@ -263,5 +263,86 @@
       <button class="arrow-button" onclick="scrollToNext()">→</button>
     </div> -->
     <script src="../script.js"></script>
+     <!-- DO NOW OVERLAY - COPY / PASTE BLOCK -->
+<style>
+#doNowOverlay{
+  position:fixed; inset:0;
+  background:#000;
+  display:flex; align-items:center; justify-content:center;
+  transform:translateY(100%);
+  transition:transform .25s ease;
+  z-index:9999;
+  font-family:Roboto, sans-serif;
+}
+
+#doNowOverlay.active{ transform:translateY(0); }
+
+#doNowOverlay .do-now-box{
+  background:#000;
+  border:4px solid #fff;
+  padding:56px 60px;
+  border-radius:18px;
+  text-align:center;
+}
+
+/* FORCE WHITE TEXT */
+#doNowOverlay h2{
+  margin:0;
+  font-size:54px;
+  font-weight:800;
+  letter-spacing:0.5px;
+  color:#ffffff !important;
+}
+
+#doNowOverlay button{
+  margin-top:28px;
+  padding:6px 12px;
+  font-size:14px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.4);
+  background:transparent;
+  color:rgba(255,255,255,0.6);
+  cursor:pointer;
+  font-weight:500;
+  opacity:0.7;
+  transition:opacity .2s ease, background .2s ease;
+}
+
+#doNowOverlay button:hover{
+  opacity:1;
+  background:rgba(255,255,255,0.12);
+  color:#ffffff;
+}
+
+
+#doNowOpenBtn{
+  position:fixed;
+  bottom:22px; right:22px;
+  padding:14px 22px;
+  font-size:18px;
+  border-radius:12px;
+  border:2px solid #fff;
+  cursor:pointer;
+  z-index:9998;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+}
+</style>
+
+<div id="doNowOverlay">
+  <div class="do-now-box">
+    <h2>Start the Do Now</h2>
+    <button onclick="closeDoNowInline()">Close</button>
+  </div>
+</div>
+
+<button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
+
+<script>
+function openDoNowInline(){ document.getElementById("doNowOverlay").classList.add("active"); }
+function closeDoNowInline(){ document.getElementById("doNowOverlay").classList.remove("active"); }
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeDoNowInline(); });
+</script>
   </body>
 </html>
