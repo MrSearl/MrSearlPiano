@@ -114,16 +114,20 @@ const sampler = new Tone.Sampler({
 const keys = document.querySelectorAll(".piano-keys");
 const activeNotes = {}; // Object to keep track of active notes
 
-document.getElementById("startButton").addEventListener("click", () => {
-  console.log("Button clicked");
-  // Start the audio context and initialize Tone.js
-  Tone.start().then(() => {
-    console.log("Tone.js Audio Context started");
-  });
+const startButton = document.getElementById("startButton");
 
-  // Disable the button after starting the audio context
-  document.getElementById("startButton").disabled = true;
-});
+if (startButton) {
+  startButton.addEventListener("click", () => {
+
+    console.log("Button clicked");
+
+    Tone.start().then(() => {
+      console.log("Tone.js Audio Context started");
+    });
+
+    startButton.disabled = true;
+  });
+}
 
 keys.forEach((key) => {
   key.addEventListener("mousedown", (e) => {
@@ -173,12 +177,19 @@ if (navigator.requestMIDIAccess) {
 
 function onMIDISuccess(midiAccess) {
   console.log("MIDI Access Object", midiAccess);
+
   const midiStatus = document.getElementById("midiStatus");
+
+  // If this page doesn't have a MIDI status element, exit safely
+  if (!midiStatus) {
+    return;
+  }
+
   let keyboardConnected = false;
 
   for (let input of midiAccess.inputs.values()) {
     if (input.name) {
-      midiStatus.textContent = `Keyboard connected`;
+      midiStatus.textContent = "Keyboard connected";
       keyboardConnected = true;
     }
     input.onmidimessage = getMIDIMessage;
@@ -188,6 +199,8 @@ function onMIDISuccess(midiAccess) {
     midiStatus.textContent = "No keyboard connected";
   }
 }
+
+
 function onMIDIFailure() {
   console.error("Could not access your MIDI devices.");
 }
@@ -344,13 +357,23 @@ function stopAllSounds() {
   });
 }
 
-document.getElementById("stopButton").addEventListener("click", stopAllSounds);
+const stopButton = document.getElementById("stopButton");
 
+if (stopButton) {
+  stopButton.addEventListener("click", stopAllSounds);
+}
 // Add a window event listener to release all notes when the page is closed or refreshed
 window.addEventListener("beforeunload", stopAllSounds);
 
 function toggleFullScreen(button) {
   const container = button.closest("[data-fullscreen-container]");
+
+  if (!container) {
+    console.warn("⚠️ Button not inside fullscreen container");
+    return;
+  }
+
+  
   const iframe = container.querySelector("iframe");
   const isKeyboard = container.classList.contains("keyboard");
   const isWhiteboard = container.classList.contains("wb");

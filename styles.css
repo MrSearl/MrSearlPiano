@@ -2,15 +2,14 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+background-color: #eef1f5;
+color: #2f343a;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
 header {
-  background-color: #615f5f;
-  color: #fff;
+background: linear-gradient(135deg, #1f2937, #374151);  color: #fff;
   text-align: center;
   padding: 20px 0 20px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -50,24 +49,24 @@ section {
   padding: 20px 20px 0 20px;
   /* min-height: 100vh; */
   width: 95%;
-  background-color: #f4f4f4;
+background-color: #eef1f5;
   flex-direction: row;
   justify-content: space-between;
 }
 
 h2 {
-  color: #0a0a0a;
+  color: #1f2937;
   font-size: 1.5em;
   margin-bottom: 30px;
   text-align: left;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
 .content {
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -78,8 +77,8 @@ h2 {
 }
 
 .assessment-content {
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -89,8 +88,8 @@ h2 {
 }
 
 .video-content {
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   line-height: 1.6;
@@ -99,8 +98,8 @@ h2 {
 }
 
 .model {
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -115,8 +114,8 @@ h2 {
 }
 
 .wb {
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   padding: 0 20px 0 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -150,7 +149,7 @@ h2 {
 }
 
 .arrow-button {
-  background-color: #242583;
+background-color: #2563eb;
   color: #fff;
   font-size: 2.2em;
   padding: 8px;
@@ -161,8 +160,7 @@ h2 {
 }
 
 .arrow-button:hover {
-  background-color: #555;
-}
+background-color: #1d4ed8;}
 
 audio {
   margin: 20px 0;
@@ -201,10 +199,10 @@ h6 {
 }
 
 .task-heading {
-  text-align: left;
-  width: 100vh;
-  padding-left: 50px;
-  padding-top: 20px;
+    text-align: left;
+    width: 95%;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .custom-audio-player {
@@ -264,7 +262,7 @@ h6 {
 }
 
 .notation-heading p {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .notation-heading {
@@ -275,15 +273,15 @@ h6 {
 
 .model-heading {
   width: 100%;
-  text-align: center;
-  background-color: white;
-  color: black;
+  text-align: left;
+color: #1f2937;
   font-size: 1.2em;
+  font-weight: 500;
 }
 .keyboard {
   width: 45%;
-  background-color: #fff;
-  border: 1px solid #ddd;
+background-color: #ffffff;
+border: 1px solid #e3e8ef;
   border-radius: 8px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -326,13 +324,8 @@ h6 {
   margin-bottom: 30px;
 }
 
-#startButton {
-  background-color: #13aa52;
-}
-
-#stopButton {
-  background-color: #aa1313;
-}
+#startButton { background-color: #16a34a; }
+#stopButton  { background-color: #dc2626; }
 
 #startButton,
 #stopButton {
@@ -519,7 +512,7 @@ h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 0, 0.8); /* Semi-transparent yellow */
+  background-color: rgba(255, 214, 10, 0.7); /* Semi-transparent yellow */
   z-index: 1;
 }
 
@@ -610,7 +603,7 @@ video {
 [data-fullscreen-container].fullscreen-active p {
   font-size: 2.4rem !important;
   line-height: 1.0;
-  margin-bottom: 0.3rem;
+  margin-bottom: 2rem;
   transition: font-size 0.3s ease;
 }
 
@@ -629,13 +622,13 @@ video {
 .toggle-button {
   appearance: button;
   backface-visibility: hidden;
-  background-color: #f4f4f4;
+background-color: #f3f6fa;
   border-radius: 6px;
-  border: 1px solid grey;
+border: 1px solid #d1d5db;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
   box-sizing: border-box;
-  color: #ccc;
+color: #6b7280;
   cursor: pointer;
   font-family: -apple-system, system-ui, "Segoe UI", "Roboto", "Helvetica Neue",
     "Ubuntu", sans-serif;
