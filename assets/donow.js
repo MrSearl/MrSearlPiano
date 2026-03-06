@@ -241,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
               <button id="startBtn" onclick="startTimer()">Start</button>
               <button id="pauseBtn" onclick="pauseTimer()">Pause</button>
               <button id="resetBtn" onclick="resetTimer()">Reset</button>
-              <button onclick="closeDoNowInline()">Close</button>
               <button id="fullscreenBtn" onclick="toggleOverlayFullscreen()">⛶</button>
             </div>
 
@@ -269,7 +268,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <button onclick="prevPage()">◀</button>
         <button onclick="nextPage()">▶</button>
       </div>
+    <button id="doNowCloseBtn" onclick="closeDoNowInline()">Close</button>
+
+
     </div>
+
 
     <button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
   `;
