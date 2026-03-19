@@ -1,4 +1,3 @@
-
 let currentPage = 1;
 let timerInterval = null;
 let totalSeconds = 0;
@@ -38,6 +37,7 @@ function resetPages(){
   currentPage = 1;
   document.getElementById("page1").classList.add("active");
   document.getElementById("page2").classList.remove("active");
+  updatePageIndicator();
 }
 
 function buildNumbers(){
@@ -57,41 +57,63 @@ function buildNumbers(){
 
   finalNotes = finalNotes.slice(0, 20);
 
-  // Page 1 (1–10)
-  for(let i = 0; i < 10; i++){
-    const div = document.createElement("div");
-    div.className = "grid-number";
+  // helper to create a page
+  function buildPage(startIndex, pageEl){
 
-    const number = document.createElement("div");
-    number.className = "note-number";
-    number.textContent = i + 1;
+    for(let row = 0; row < 2; row++){
 
-    const img = document.createElement("img");
-    img.src = "../donownotes/" + finalNotes[i];
-    img.alt = "Note";
+      const rowDiv = document.createElement("div");
+      rowDiv.style.display = "contents"; // keeps grid layout intact
 
-    div.appendChild(number);
-    div.appendChild(img);
-    page1.appendChild(div);
+      for(let col = 0; col < 5; col++){
+
+        const i = startIndex + (row * 5) + col;
+
+        const div = document.createElement("div");
+        div.className = "grid-number";
+
+        const number = document.createElement("div");
+        number.className = "note-number";
+        number.textContent = (i < 10) ? i + 1 : (i - 9);
+
+        const noteName = finalNotes[i]
+          .replace(".svg","")
+          .replace("2","");
+
+        const img = document.createElement("img");
+        img.src = "../donownotes/" + finalNotes[i];
+        img.alt = noteName;
+
+        const answer = document.createElement("div");
+        answer.className = "note-answer";
+        answer.textContent = noteName;
+
+        div.appendChild(number);
+        div.appendChild(img);
+        div.appendChild(answer);
+
+        rowDiv.appendChild(div);
+      }
+
+      // 🔥 CLICK ANY ITEM IN ROW → TOGGLE WHOLE ROW
+      rowDiv.addEventListener("click", ()=>{
+        const answers = rowDiv.querySelectorAll(".note-answer");
+        const isShown = rowDiv.classList.contains("revealed");
+
+        answers.forEach(a => {
+          a.classList.toggle("show", !isShown);
+        });
+
+        rowDiv.classList.toggle("revealed");
+      });
+
+      pageEl.appendChild(rowDiv);
+    }
   }
 
-  // Page 2 (1–10 again)
-  for(let i = 10; i < 20; i++){
-    const div = document.createElement("div");
-    div.className = "grid-number";
-
-    const number = document.createElement("div");
-    number.className = "note-number";
-    number.textContent = (i - 9);  // restart numbering 1–10
-
-    const img = document.createElement("img");
-    img.src = "../donownotes/" + finalNotes[i];
-    img.alt = "Note";
-
-    div.appendChild(number);
-    div.appendChild(img);
-    page2.appendChild(div);
-  }
+  // build both pages
+  buildPage(0, page1);
+  buildPage(10, page2);
 }
 
 function updatePageIndicator(){
@@ -115,8 +137,6 @@ function prevPage(){
     updatePageIndicator();
   }
 }
-
-
 
 function getInputTime(){
   const mins = parseInt(document.getElementById("minutesInput").value) || 0;
@@ -187,11 +207,10 @@ function updateDisplay(){
     ":" +
     String(seconds).padStart(2,"0");
 }
+
 document.addEventListener("keydown", e=>{
   if(e.key === "Escape") closeDoNowInline();
 });
-
-
 
 function toggleOverlayFullscreen(){
 
@@ -213,15 +232,12 @@ document.addEventListener("fullscreenchange", ()=>{
   }
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const mount = document.getElementById("doNowMount");
   if (!mount) return;
 
   mount.innerHTML = `
-    <!-- DO NOW OVERLAY -->
     <div id="doNowOverlay">
       <div class="do-now-wrapper">
 
@@ -235,26 +251,10 @@ document.addEventListener("DOMContentLoaded", () => {
             Page <span id="pageIndicator">1</span>
           </div>
 
-          <div class="do-now-top-bar">
-
-            <div class="left-controls">
-              <button id="startBtn" onclick="startTimer()">Start</button>
-              <button id="pauseBtn" onclick="pauseTimer()">Pause</button>
-              <button id="resetBtn" onclick="resetTimer()">Reset</button>
-              <button id="fullscreenBtn" onclick="toggleOverlayFullscreen()">⛶</button>
-            </div>
-
-            <div class="guide-container">
-              <img src="../donownotes/guide.svg" alt="Note Guide">
-            </div>
-
-            <div class="time-inputs">
-              <input type="number" id="minutesInput" min="0" value="2">
-              <span>:</span>
-              <input type="number" id="secondsInput" min="0" max="59" value="0">
-            </div>
-
+          <div class="guide-container large-guide">
+            <img src="../donownotes/guide.svg" alt="Note Guide">
           </div>
+
         </div>
 
         <div class="grid-container">
@@ -268,16 +268,33 @@ document.addEventListener("DOMContentLoaded", () => {
         <button onclick="prevPage()">◀</button>
         <button onclick="nextPage()">▶</button>
       </div>
-    <button id="doNowCloseBtn" onclick="closeDoNowInline()">Close</button>
 
+      <div class="bottom-controls">
+
+        <div class="controls-left">
+          <button id="startBtn" onclick="startTimer()">Start</button>
+          <button id="pauseBtn" onclick="pauseTimer()">Pause</button>
+          <button id="resetBtn" onclick="resetTimer()">Reset</button>
+          <button id="fullscreenBtn" onclick="toggleOverlayFullscreen()">⛶</button>
+        </div>
+
+        <div class="controls-right">
+          <div class="time-inputs">
+            <input type="number" id="minutesInput" min="0" value="2">
+            <span>:</span>
+            <input type="number" id="secondsInput" min="0" max="59" value="0">
+          </div>
+        </div>
+
+      </div>
+
+      <button id="doNowCloseBtn" onclick="closeDoNowInline()">Close</button>
 
     </div>
-
 
     <button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
   `;
 
-  // Now the DOM exists — safe to initialise
   updateDisplay();
 
 });
