@@ -14,6 +14,8 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+    <link rel="stylesheet" href="../assets/donowstyles.css">
+<script src="../assets/donow.js" defer></script>
   </head>
   <body>
     <div class="main-container">
@@ -143,5 +145,8 @@ function openDoNowInline(){ document.getElementById("doNowOverlay").classList.ad
 function closeDoNowInline(){ document.getElementById("doNowOverlay").classList.remove("active"); }
 document.addEventListener("keydown", e => { if(e.key === "Escape") closeDoNowInline(); });
 </script>
+
+<div id="doNowMount"></div>
+
   </body>
 </html>
