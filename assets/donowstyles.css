@@ -298,3 +298,59 @@ button:hover{
   opacity:1;
   transform:translateY(0);
 }
+
+
+
+/* QUIZ OVERLAY */
+#quizOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  z-index:1000;
+}
+
+#quizOverlay.active{
+  display:block;
+}
+
+#quizOverlay iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* PUSH QUIZ BUTTON LEFT OF DO NOW */
+#quizBtn{
+  right: 140px; /* adjust spacing if needed */
+}
+
+/* KEEP CLOSE BUTTON IN SAME PLACE */
+#quizCloseBtn{
+  right: 140px;
+}
+
+/* QUIZ BUTTONS MATCH DO NOW STYLE */
+
+#quizBtn,
+#quizCloseBtn{
+  position:fixed;
+  bottom:22px;
+  right:140px; /* sits left of Do Now */
+  padding:14px 22px;
+  font-size:18px;
+  border-radius:12px;
+  border:2px solid #fff;
+  cursor:pointer;
+  background:#000;
+  color:#fff;
+  font-weight:700;
+  z-index:9998;
+}
+
+/* CLOSE BUTTON ABOVE OVERLAY */
+#quizCloseBtn{
+  z-index:10000;
+  display:none;
+}
+

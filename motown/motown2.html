@@ -184,6 +184,20 @@
 
 <button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
 
+<!-- QUIZ OVERLAY -->
+
+<div id="quizOverlay">
+  <iframe id="quizFrame"></iframe>
+</div>
+
+<button id="quizBtn" class="fixed-do-now-btn" onclick="openQuiz()">
+  Quiz
+</button>
+
+<button id="quizCloseBtn" class="fixed-do-now-btn" onclick="closeQuiz()" style="display:none;">
+  Close
+</button>
+
 <script>
 function openDoNowInline(){ document.getElementById("doNowOverlay").classList.add("active"); }
 function closeDoNowInline(){ document.getElementById("doNowOverlay").classList.remove("active"); }

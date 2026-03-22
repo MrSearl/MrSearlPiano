@@ -298,3 +298,22 @@ document.addEventListener("DOMContentLoaded", () => {
   updateDisplay();
 
 });
+
+
+
+const QUIZ_URL = "https://script.google.com/a/macros/colchesteracademy.org.uk/s/AKfycbw2ww9OapW6rcgBwWdCQrLThoBWuN_mhQV2DkUed__3rvwjwXAfwO6kHjvHIuMCa_gQSA/exec";
+
+function openQuiz(){
+  window.open(QUIZ_URL, "_blank");
+}
+
+function closeQuiz(){
+  const overlay = document.getElementById("quizOverlay");
+  const frame = document.getElementById("quizFrame");
+
+  overlay.classList.remove("active");
+  frame.src = ""; // reset
+
+  document.getElementById("quizBtn").style.display = "block";
+  document.getElementById("quizCloseBtn").style.display = "none";
+}
