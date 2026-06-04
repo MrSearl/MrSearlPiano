@@ -7,44 +7,53 @@
 
     <link rel="stylesheet" href="../styles.css" />
     <title>Reggae Music</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
   </head>
+
   <body>
     <div class="main-container">
+
       <header>
-        <a href="../index.html"><h1>Harmony - Reggae Music</h1></a>
+        <a href="../index.html"><h1>Production - Reggae Music</h1></a>
       </header>
 
       <div class="task-heading">
-        <h2>Harmony - Reggae Music</h2>
+        <h2>Production - Reggae Music</h2>
       </div>
 
       <section>
+
         <div class="content">
 
           <div class="text-and-image-container">
+
             <div class="image-container">
-    <img src="Tootsinthedark.jpg" alt="" />
+              <img src="Tootsinthedark.jpg" alt="" />
             </div>
 
             <div class="text-container">
               <p>
-                Harmony in reggae music is usually simple, repetitive, and based around short chord progressions that repeat throughout the song. Chords are often played using short, detached offbeat rhythms known as the “skank,” which helps create the distinctive reggae groove. Reggae harmony commonly uses major and minor triads and usually remains in the same key for long periods without complex modulations. The harmonic rhythm is often slow, meaning chords change less frequently than in many other styles of music.
+                Production techniques in reggae music are used to create space, atmosphere, and clarity within the mix. Effects such as reverb, delay, and echo are commonly applied to vocals, guitars, and percussion to give the music a spacious and atmospheric sound. Reggae mixes often place strong emphasis on the bass frequencies, helping the bass guitar feel powerful and dominant within the texture. Instruments are usually carefully balanced so that each rhythmic and melodic layer can be heard clearly without overcrowding the mix. Production in reggae music helps reinforce the relaxed groove and overall mood of the style.
               </p>
             </div>
+
           </div>
 
           <div class="listening-content"></div>
 
           <div class="custom-audio-player">
+
             <audio class="audio-element">
-              <source src="./redredwine.mp3" type="audio/mpeg" />
+              <source src="./policeandthieves.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
 
@@ -60,6 +69,7 @@
               step="0.05"
               value="0.6"
             />
+
           </div>
 
         </div>
@@ -69,29 +79,27 @@
           <p><strong>Mini Whiteboard Questions:</strong></p>
 
           <p>
-            1. <u>Does the song use simple or complex chord progressions?</u><br><br>
+            1. <u>Can you hear any production effects such as reverb, delay, or echo in Police and Thieves?</u><br><br>
 
             <span style="display:block; margin-left:30px;">
-              Describe the harmony you can hear in Red Red Wine.
+              Describe where they occur.
             </span>
           </p>
 
           <br>
 
           <p>
-            2. <u>Can you hear repeated chord patterns throughout the song?</u><br><br>
+            2. <u>Which instrument sounds most prominent in the mix?</u><br><br>
 
             <span style="display:block; margin-left:30px;">
-              Give one example.
+              Explain your answer.
             </span>
           </p>
 
           <br>
 
           <p>
-            3. <u>How do the offbeat guitar or keyboard chords help create the reggae feel?</u><br><br>
-
- 
+            3. <u>How does the production help create the atmosphere and groove of the song?</u>
           </p>
 
           <br>
@@ -119,7 +127,9 @@
   font-family:Roboto, sans-serif;
 }
 
-#doNowOverlay.active{ transform:translateY(0); }
+#doNowOverlay.active{
+  transform:translateY(0);
+}
 
 #doNowOverlay .do-now-box{
   background:#000;
@@ -159,7 +169,8 @@
 
 #doNowOpenBtn{
   position:fixed;
-  bottom:22px; right:22px;
+  bottom:22px;
+  right:22px;
   padding:14px 22px;
   font-size:18px;
   border-radius:12px;
@@ -182,16 +193,16 @@
 <button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
 
 <script>
-function openDoNowInline(){ 
-  document.getElementById("doNowOverlay").classList.add("active"); 
+function openDoNowInline(){
+  document.getElementById("doNowOverlay").classList.add("active");
 }
 
-function closeDoNowInline(){ 
-  document.getElementById("doNowOverlay").classList.remove("active"); 
+function closeDoNowInline(){
+  document.getElementById("doNowOverlay").classList.remove("active");
 }
 
-document.addEventListener("keydown", e => { 
-  if(e.key === "Escape") closeDoNowInline(); 
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeDoNowInline();
 });
 </script>
 

@@ -7,44 +7,53 @@
 
     <link rel="stylesheet" href="../styles.css" />
     <title>Reggae Music</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
   </head>
+
   <body>
     <div class="main-container">
+
       <header>
-        <a href="../index.html"><h1>Harmony - Reggae Music</h1></a>
+        <a href="../index.html"><h1>Instrumentation - Reggae Music</h1></a>
       </header>
 
       <div class="task-heading">
-        <h2>Harmony - Reggae Music</h2>
+        <h2>Instrumentation - Reggae Music</h2>
       </div>
 
       <section>
+
         <div class="content">
 
           <div class="text-and-image-container">
+
             <div class="image-container">
-    <img src="Tootsinthedark.jpg" alt="" />
+              <img src="Tootsinthedark.jpg" alt="" />
             </div>
 
             <div class="text-container">
               <p>
-                Harmony in reggae music is usually simple, repetitive, and based around short chord progressions that repeat throughout the song. Chords are often played using short, detached offbeat rhythms known as the “skank,” which helps create the distinctive reggae groove. Reggae harmony commonly uses major and minor triads and usually remains in the same key for long periods without complex modulations. The harmonic rhythm is often slow, meaning chords change less frequently than in many other styles of music.
+                Instrumentation in reggae music usually focuses on a strong rhythm section supported by vocals and keyboards. Common instruments include bass guitar, drum kit, electric guitar, keyboard or organ, percussion, and vocals. The bass guitar is often one of the most important instruments in reggae, providing a deep and repetitive groove. Guitars and keyboards commonly play short offbeat chords, while drums maintain the steady rhythmic feel of the style. Different instruments work together to create a layered but balanced texture.
               </p>
             </div>
+
           </div>
 
           <div class="listening-content"></div>
 
           <div class="custom-audio-player">
+
             <audio class="audio-element">
-              <source src="./redredwine.mp3" type="audio/mpeg" />
+              <source src="./harder.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
 
@@ -60,6 +69,7 @@
               step="0.05"
               value="0.6"
             />
+
           </div>
 
         </div>
@@ -69,29 +79,29 @@
           <p><strong>Mini Whiteboard Questions:</strong></p>
 
           <p>
-            1. <u>Does the song use simple or complex chord progressions?</u><br><br>
+            1. <u>What instruments can you hear in The Harder They Come?</u><br><br>
 
             <span style="display:block; margin-left:30px;">
-              Describe the harmony you can hear in Red Red Wine.
+              List as many as you can identify.
             </span>
           </p>
 
           <br>
 
           <p>
-            2. <u>Can you hear repeated chord patterns throughout the song?</u><br><br>
+            2. <u>Which instrument is most important in creating the reggae feel of the song?</u><br><br>
 
             <span style="display:block; margin-left:30px;">
-              Give one example.
+              Explain your answer.
             </span>
           </p>
 
           <br>
 
           <p>
-            3. <u>How do the offbeat guitar or keyboard chords help create the reggae feel?</u><br><br>
+            3. <u>How do the instruments work together to create the overall texture of the track?</u><br><br>
 
- 
+          
           </p>
 
           <br>
@@ -119,7 +129,9 @@
   font-family:Roboto, sans-serif;
 }
 
-#doNowOverlay.active{ transform:translateY(0); }
+#doNowOverlay.active{
+  transform:translateY(0);
+}
 
 #doNowOverlay .do-now-box{
   background:#000;
@@ -159,7 +171,8 @@
 
 #doNowOpenBtn{
   position:fixed;
-  bottom:22px; right:22px;
+  bottom:22px;
+  right:22px;
   padding:14px 22px;
   font-size:18px;
   border-radius:12px;
@@ -182,16 +195,16 @@
 <button id="doNowOpenBtn" onclick="openDoNowInline()">Do Now</button>
 
 <script>
-function openDoNowInline(){ 
-  document.getElementById("doNowOverlay").classList.add("active"); 
+function openDoNowInline(){
+  document.getElementById("doNowOverlay").classList.add("active");
 }
 
-function closeDoNowInline(){ 
-  document.getElementById("doNowOverlay").classList.remove("active"); 
+function closeDoNowInline(){
+  document.getElementById("doNowOverlay").classList.remove("active");
 }
 
-document.addEventListener("keydown", e => { 
-  if(e.key === "Escape") closeDoNowInline(); 
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeDoNowInline();
 });
 </script>
 
