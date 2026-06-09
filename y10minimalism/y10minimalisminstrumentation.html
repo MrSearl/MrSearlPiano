@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Minimalism</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+
+      <header>
+        <a href="../index.html"><h1>Instrumentation - Minimalism</h1></a>
+      </header>
+
+      <div class="task-heading">
+        <h2>Instrumentation - Minimalism</h2>
+      </div>
+
+      <section>
+
+        <div class="content">
+
+          <div class="text-and-image-container">
+
+            <div class="image-container">
+              <img src="glass.jpg" alt="" />
+            </div>
+
+            <div class="text-container">
+              <p>
+                Instrumentation in minimalist music varies widely but often features small ensembles, keyboards, percussion instruments, and voices. Minimalist composers frequently use repeated patterns shared between different instruments, creating interlocking textures. Instruments are usually chosen for their ability to maintain a steady pulse and repeat patterns accurately. Electronic instruments and amplified ensembles are also common in some minimalist works.
+              </p>
+
+              <p>
+                <strong>Example:</strong>
+              </p>
+
+              <p>
+                A minimalist piece may use pianos, voices, percussion, and woodwind instruments playing repeated patterns that combine to create a rich and constantly evolving sound.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+
+            <audio class="audio-element">
+              <source src="philip_glass_-_opening_official_video.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+
+            <input type="range" class="seek-bar" value="0" step="1" />
+
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+
+          </div>
+
+        </div>
+
+        <div class="wb" data-fullscreen-container>
+
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            1. <u>What instruments can you identify in <em>Glassworks: Opening</em>?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Describe the sounds you can hear.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            2. <u>Do the instruments play similar repeating patterns or different roles?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Explain your answer.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            3. <u>How do the different instruments work together to create the overall atmosphere of the music?</u>
+          </p>
+
+          <br>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+
+          <br>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>
