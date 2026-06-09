@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Ambient Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+
+      <header>
+        <a href="../index.html"><h1>Rhythm - Ambient Music</h1></a>
+      </header>
+
+      <div class="task-heading">
+        <h2>Rhythm - Ambient Music</h2>
+      </div>
+
+      <section>
+
+        <div class="content">
+
+          <div class="text-and-image-container">
+
+            <div class="image-container">
+              <img src="littlefluffy.jpg" alt="" />
+            </div>
+
+            <div class="text-container">
+              <p>
+                Rhythmic techniques in ambient music are often subtle and understated. Some ambient pieces have no obvious pulse, while others use slow-moving repeated patterns to create a sense of movement. Unlike dance music, ambient rhythm is usually designed to support the atmosphere rather than attract attention. Repetition and gradual change are more important than strong beats or complex rhythms.
+              </p>
+
+              <p>
+                <strong>Example:</strong>
+              </p>
+
+              <p>
+                An ambient piece may use gentle rhythmic loops or repeating patterns that slowly evolve over time, helping to create a flowing and immersive listening experience.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+
+            <audio class="audio-element">
+              <source src="the_orb_-_little_fluffy_clouds_official_music_video.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+
+            <input type="range" class="seek-bar" value="0" step="1" />
+
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+
+          </div>
+
+        </div>
+
+        <div class="wb" data-fullscreen-container>
+
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            1. <u>Can you hear a steady pulse in <em>Little Fluffy Clouds</em>, or does the rhythm feel free and flowing?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Describe what you hear.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            2. <u>What repeated rhythmic patterns or loops can you identify in the track?</u>
+          </p>
+
+          <br>
+
+          <p>
+            3. <u>How does the rhythm contribute to the relaxed and atmospheric mood of the music?</u>
+          </p>
+
+          <br>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+
+          <br>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>

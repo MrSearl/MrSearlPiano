@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Ambient Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+
+      <header>
+        <a href="../index.html"><h1>Structure - Ambient Music</h1></a>
+      </header>
+
+      <div class="task-heading">
+        <h2>Structure - Ambient Music</h2>
+      </div>
+
+      <section>
+
+        <div class="content">
+
+          <div class="text-and-image-container">
+
+            <div class="image-container">
+              <img src="phaedra.jpg" alt="" />
+            </div>
+
+            <div class="text-container">
+              <p>
+                Structure in ambient music is usually based on gradual development rather than clear verse and chorus sections. Pieces often evolve slowly over time, with layers and sounds being introduced or removed almost imperceptibly. Repetition is extremely important, with patterns and textures changing subtly to maintain interest. Rather than building towards dramatic climaxes, ambient music aims to create a continuous and immersive listening experience.
+              </p>
+
+              <p>
+                <strong>Example:</strong>
+              </p>
+
+              <p>
+                An ambient piece may begin with only a few sounds before slowly adding additional layers and textures. These gradual changes help create movement while preserving the calm atmosphere of the music.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+
+            <audio class="audio-element">
+              <source src="tangerine_dream__phaedra_hd.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+
+            <input type="range" class="seek-bar" value="0" step="1" />
+
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+
+          </div>
+
+        </div>
+
+        <div class="wb" data-fullscreen-container>
+
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            1. <u>Can you identify different sections within <em>Phaedra</em>, or does the music feel like one continuous flow?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Describe what you hear.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            2. <u>How are new sounds and layers gradually introduced or removed throughout the piece?</u>
+          </p>
+
+          <br>
+
+          <p>
+            3. <u>How does repetition help create the overall structure and atmosphere of the music?</u>
+          </p>
+
+          <br>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+
+          <br>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>

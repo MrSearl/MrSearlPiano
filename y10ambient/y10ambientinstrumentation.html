@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Ambient Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+
+      <header>
+        <a href="../index.html"><h1>Instrumentation - Ambient Music</h1></a>
+      </header>
+
+      <div class="task-heading">
+        <h2>Instrumentation - Ambient Music</h2>
+      </div>
+
+      <section>
+
+        <div class="content">
+
+          <div class="text-and-image-container">
+
+            <div class="image-container">
+              <img src="departure.jpg" alt="" />
+            </div>
+
+            <div class="text-container">
+              <p>
+                Instrumentation in ambient music is mainly electronic and is designed to create atmosphere rather than a strong beat. Common instruments include synthesisers, samplers, electric pianos, sequencers, and digital sound processors. Ambient composers may also incorporate field recordings and sampled sounds from nature or everyday life. These instruments are often used to produce long sustained tones and evolving textures that blend together to create immersive soundscapes.
+              </p>
+
+              <p>
+                <strong>Example:</strong>
+              </p>
+
+              <p>
+                An ambient piece may combine several layers of synthesisers with sampled sounds and electronic effects to create a rich and spacious sound world.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+
+            <audio class="audio-element">
+              <source src="michael_hoenig_-_departure_from_the_northern_wasteland.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+
+            <input type="range" class="seek-bar" value="0" step="1" />
+
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+
+          </div>
+
+        </div>
+
+        <div class="wb" data-fullscreen-container>
+
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            1. <u>What electronic instruments or sounds can you identify in <em>Departure from the Northern Wasteland</em>?</u>
+          </p>
+
+          <br>
+
+          <p>
+            2. <u>Can you hear any long sustained synthesiser sounds?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Describe their role in the music.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            3. <u>How do the different instruments work together to create atmosphere and space?</u>
+          </p>
+
+          <br>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+
+          <br>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>

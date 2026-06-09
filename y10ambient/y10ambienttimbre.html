@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Ambient Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.31/build/Tone.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+
+      <header>
+        <a href="../index.html"><h1>Timbre - Ambient Music</h1></a>
+      </header>
+
+      <div class="task-heading">
+        <h2>Timbre - Ambient Music</h2>
+      </div>
+
+      <section>
+
+        <div class="content">
+
+          <div class="text-and-image-container">
+
+            <div class="image-container">
+              <img src="rubycon.jpg" alt="" />
+            </div>
+
+            <div class="text-container">
+              <p>
+                Timbre is particularly important in ambient music because composers use sound colour to create mood and atmosphere. Ambient music often features warm synthesiser pads, soft electronic sounds, and long sustained tones. Effects such as reverb and delay are commonly used to give sounds a sense of depth and space. Different timbres may gradually appear and disappear throughout a piece, helping to create contrast without relying on strong melodies or rhythms.
+              </p>
+
+              <p>
+                <strong>Example:</strong>
+              </p>
+
+              <p>
+                An ambient track may combine bright synthesiser sounds with darker pads and heavily processed effects to create a wide range of colours and textures within the music.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="listening-content"></div>
+
+          <div class="custom-audio-player">
+
+            <audio class="audio-element">
+              <source src="rubycon_pt_1__remastered_2018.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <button class="play-pause-btn">▶️</button>
+
+            <input type="range" class="seek-bar" value="0" step="1" />
+
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.6"
+            />
+
+          </div>
+
+        </div>
+
+        <div class="wb" data-fullscreen-container>
+
+          <p><strong>Mini Whiteboard Questions:</strong></p>
+
+          <p>
+            1. <u>What different sound colours can you hear in <em>Rubycon Part 1</em>?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Describe some of the electronic sounds that stand out.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            2. <u>Do the sounds seem bright, dark, warm, or cold?</u><br><br>
+
+            <span style="display:block; margin-left:30px;">
+              Explain your answer.
+            </span>
+          </p>
+
+          <br>
+
+          <p>
+            3. <u>How do the different timbres help create the atmosphere and mood of the music?</u>
+          </p>
+
+          <br>
+
+          <button class="toggle-button" onclick="toggleFullScreen(this)">
+            🔲
+          </button>
+
+          <br>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+  </body>
+</html>
